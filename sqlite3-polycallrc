@@ -1,0 +1,7 @@
+# sqlite3-polycallrc -- read-only runtime defaults for libpolycall SQLite3 adapter
+
+log_level=info
+sqlite3_bin=C:\SQLite\sqlite3.exe
+polycall_exe=..\libpolycall\build\bin\polycall.exe
+polycall_config=..\libpolycall\Polycallfile
+sqlite_table=polycall_config_validation

@@ -1,0 +1,77 @@
+{
+  "name": "@obinexusltd/sqlite3-polycall",
+  "version": "1.0.0",
+  "description": "SQLite3 command/record adapter for libpolycall config validation.",
+  "license": "MIT",
+  "author": "Nnamdi Michael Okpala <okpalan@protonmail.com>",
+  "type": "commonjs",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./src": "./src/sqlite3_polycall.js",
+    "./package.json": "./package.json",
+    "./polycall-binding.json": "./polycall-binding.json"
+  },
+  "bin": {
+    "sqlite3-polycall": "bin/sqlite3-polycall.js",
+    "sqlite-polycall": "bin/sqlite3-polycall.js"
+  },
+  "files": [
+    "bin/",
+    "dist/README.md",
+    "examples/README.md",
+    "examples/run.js",
+    "examples/schema.sql",
+    "src/",
+    "tests/",
+    "index.js",
+    "polycall-binding.json",
+    "sqlite3-polycallrc",
+    "README.md",
+    "TODO.md",
+    "LICENSE"
+  ],
+  "directories": {
+    "bin": "bin",
+    "dist": "dist",
+    "example": "examples",
+    "lib": "src",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "npm run test:package && npm run test:sqlite && npm run test:bin",
+    "test:bin": "node tests/bin.test.js",
+    "test:package": "node tests/package.test.js",
+    "test:sqlite": "node tests/sqlite.test.js",
+    "verify": "npm test",
+    "prepack": "npm test"
+  },
+  "keywords": [
+    "sqlite",
+    "sqlite3",
+    "polycall",
+    "libpolycall",
+    "ffi",
+    "database",
+    "validation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obinexus/sqlite3-polycall.git"
+  },
+  "bugs": {
+    "url": "https://github.com/obinexus/sqlite3-polycall/issues"
+  },
+  "homepage": "https://github.com/obinexus/sqlite3-polycall#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "libpolycall": {
+    "release": "1.0.0",
+    "hostUrl": "https://github.com/obinexus/libpolycall/releases#release-libpolycall-1.0.0",
+    "defaultExecutable": "../libpolycall/build/bin/polycall.exe"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

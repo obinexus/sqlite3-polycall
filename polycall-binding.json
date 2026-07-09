@@ -1,0 +1,22 @@
+{
+  "binding": "sqlite3-polycall",
+  "package": "@obinexusltd/sqlite3-polycall",
+  "language": "SQLite3",
+  "runtime": "sqlite3 CLI plus polycall.exe",
+  "version": "1.0.0",
+  "status": "thin-adapter",
+  "sqlite": {
+    "defaultExecutable": "C:\\SQLite\\sqlite3.exe",
+    "table": "polycall_config_validation"
+  },
+  "polycall": {
+    "defaultExecutable": "../libpolycall/build/bin/polycall.exe",
+    "defaultCommand": "config validate"
+  },
+  "libpolycall": {
+    "release": "1.0.0",
+    "hostUrl": "https://github.com/obinexus/libpolycall/releases#release-libpolycall-1.0.0"
+  },
+  "author": "Nnamdi Michael Okpala <okpalan@protonmail.com>",
+  "license": "MIT"
+}
