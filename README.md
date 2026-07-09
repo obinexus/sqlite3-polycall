@@ -21,9 +21,32 @@ Or run with `npx`:
 
 ```sh
 npx @obinexusltd/sqlite3-polycall --help
+npm exec --package . -- sqlite3-polycall --help
+npx .
 npx @obinexusltd/sqlite3-polycall doctor
 npx @obinexusltd/sqlite3-polycall validate ..\libpolycall\Polycallfile --db sqlite3-polycall.db
 ```
+
+During local development, before the package exists on npmjs.org, run the same
+binary through the local package path:
+
+```sh
+npx . --help
+npx file:. doctor
+npm exec --package . -- sqlite3-polycall --help
+npm run test:npx-local
+```
+
+After publishing, these registry-backed forms are supported:
+
+```sh
+npx @obinexusltd/sqlite3-polycall --help
+npm exec --package @obinexusltd/sqlite3-polycall -- sqlite3-polycall doctor
+```
+
+The npm package intentionally exposes a single `bin` command,
+`sqlite3-polycall`, so scoped-package `npx` inference is deterministic on
+Windows, macOS, and Linux.
 
 ## JavaScript API
 
@@ -78,7 +101,7 @@ The test suite verifies:
 - `C:\SQLite\sqlite3.exe`
 - `..\libpolycall\build\bin\polycall.exe`
 - `polycall.exe config validate ..\libpolycall\Polycallfile`
-- npm `bin` compatibility for `npx`
+- npm `bin` compatibility for `npx` / `npm exec`
 
 
 ## License

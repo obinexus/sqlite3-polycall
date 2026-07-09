@@ -13,8 +13,7 @@
     "./polycall-binding.json": "./polycall-binding.json"
   },
   "bin": {
-    "sqlite3-polycall": "bin/sqlite3-polycall.js",
-    "sqlite-polycall": "bin/sqlite3-polycall.js"
+    "sqlite3-polycall": "bin/sqlite3-polycall.js"
   },
   "files": [
     "bin/",
@@ -41,9 +40,10 @@
   "scripts": {
     "test": "npm run test:package && npm run test:sqlite && npm run test:bin",
     "test:bin": "node tests/bin.test.js",
+    "test:npx-local": "npm exec --package . -- sqlite3-polycall --help",
     "test:package": "node tests/package.test.js",
     "test:sqlite": "node tests/sqlite.test.js",
-    "verify": "npm test",
+    "verify": "npm test && npm run test:npx-local",
     "prepack": "npm test"
   },
   "keywords": [

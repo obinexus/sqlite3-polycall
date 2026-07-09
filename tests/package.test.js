@@ -13,7 +13,7 @@ assert.equal(pkg.license, "MIT");
 assert.equal(pkg.author, "Nnamdi Michael Okpala <okpalan@protonmail.com>");
 assert.equal(pkg.publishConfig.access, "public");
 assert.equal(pkg.bin["sqlite3-polycall"], "bin/sqlite3-polycall.js");
-assert.equal(pkg.bin["sqlite-polycall"], "bin/sqlite3-polycall.js");
+assert.deepEqual(Object.keys(pkg.bin), ["sqlite3-polycall"]);
 
 for (const directory of ["bin", "dist", "examples", "src", "tests"]) {
   assert.ok(fs.existsSync(path.join(__dirname, "..", directory)), `${directory} exists`);
